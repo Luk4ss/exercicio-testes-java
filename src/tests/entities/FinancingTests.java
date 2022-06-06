@@ -47,5 +47,17 @@ public class FinancingTests {
 		
 		Assertions.assertTrue(objectCreated != null);
 	}
+	
+	@Test
+	public void constructShouldThrowExceptionWhenInvalidData() {
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () ->{
+			double totalAmount = 100000.0;
+			double income = 2000.0;
+			int months = 20;
+				
+			new Financing(totalAmount, income, months);
+		});
+	}
 
 }
