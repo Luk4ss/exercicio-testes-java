@@ -59,5 +59,15 @@ public class FinancingTests {
 			new Financing(totalAmount, income, months);
 		});
 	}
+	
+	@Test
+	public void setTotalAmountShouldBeUpdatedWhenDataIsValid() {
+		
+		double expectedValue = 100000.0;		
+		Financing financing = new Financing(100000.0, 2000.0, 80);
+		
+		Assertions.assertEquals(expectedValue, financing.getTotalAmount());
+		
+	}
 
 }
