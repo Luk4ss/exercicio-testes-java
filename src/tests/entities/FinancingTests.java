@@ -11,16 +11,30 @@ public class FinancingTests {
 	public void quotaShoudBeCorrect() {
 		
 		double totalAmount = 100000.0;
-		double entry = 20000.0;
+		double income = 2000.0;
 		int months = 80;
 		
 		double expectedValue = 1000.0;
 		
-		Financing fnc = new Financing(totalAmount, entry, months);
+		Financing financing = new Financing(totalAmount, income, months);
 		
-		Assertions.assertEquals(expectedValue, fnc.quota());
+		Assertions.assertEquals(expectedValue, financing.quota());
 		
+	}
+	
+	@Test
+	public void entryShoudBeCorrect() {
+		double totalAmount = 100000.0;
+		double income = 2000.0;
+		int months = 80;
+		
+		double expectedValue = 20000.0;
+		
+		Financing financing = new Financing(totalAmount, income, months);
+		
+		Assertions.assertEquals(expectedValue, financing.entry() );
 		
 		
 	}
+
 }

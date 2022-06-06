@@ -6,6 +6,7 @@ public class Financing {
 	private Double income;
 	private Integer months;
 	
+	
 	public Financing(Double totalAmount, Double income, Integer months) {
 		validateFinancing(totalAmount, income, months);
 		this.totalAmount = totalAmount;
