@@ -36,5 +36,16 @@ public class FinancingTests {
 		
 		
 	}
+	
+	@Test
+	public void constructorShouldCreateAnObjectWhenValidData() {
+		double totalAmount = 100000.0;
+		double income = 2000.0;
+		int months = 80;
+			
+		Financing objectCreated = new Financing(totalAmount, income, months);
+		
+		Assertions.assertTrue(objectCreated != null);
+	}
 
 }
