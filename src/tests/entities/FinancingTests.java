@@ -121,5 +121,16 @@ public class FinancingTests {
 		Assertions.assertEquals(expectedValue, financing.getMonths());
 		
 	}
+	
+	@Test
+	public void setMonthsShouldThrowExceptionWhenDataIsInvalid() {
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+			
+			Financing financing = new Financing(100000.0, 2000.0, 80);
+			
+			financing.setMonths(20);
+		});
+	}
 
 }
