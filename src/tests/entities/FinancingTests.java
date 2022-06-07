@@ -109,5 +109,17 @@ public class FinancingTests {
 			financing.setIncome(1000.0);
 		});
 	}
+	
+	@Test
+	public void setMonthsShouldUpdateWhenDataIsValid() {
+		
+		int expectedValue = 90;
+		Financing financing = new Financing(100000.0, 2000.0, 80);
+		
+		financing.setMonths(90);
+		
+		Assertions.assertEquals(expectedValue, financing.getMonths());
+		
+	}
 
 }
