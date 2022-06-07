@@ -64,10 +64,24 @@ public class FinancingTests {
 	public void setTotalAmountShouldBeUpdatedWhenDataIsValid() {
 		
 		double expectedValue = 100000.0;		
-		Financing financing = new Financing(100000.0, 2000.0, 80);
+		Financing financing = new Financing(90000.0, 4000.0, 80);
+		
+		financing.setTotalAmount(100000.0);
 		
 		Assertions.assertEquals(expectedValue, financing.getTotalAmount());
 		
+	}
+	
+	@Test
+	public void setTotalAmountShouldThrowExceptionWhenDataIsInvalid() {
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> {
+		
+			Financing  fn = new Financing(100000.0, 2000.0, 80);
+			
+			fn.setTotalAmount(120000.0);
+			
+		});
 	}
 
 }
