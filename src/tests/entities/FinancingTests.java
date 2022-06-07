@@ -83,5 +83,20 @@ public class FinancingTests {
 			
 		});
 	}
+	
+	@Test
+	public void setIncomeShouldUpdateWhenDataIsValid() {
+		
+		double expectedValue = 4000.0;
+		
+		Financing financing = new Financing(100000.0, 2000.0, 80);
+		
+		financing.setIncome(4000.0);
+		
+		Assertions.assertTrue(expectedValue == financing.getIncome());
+		
+		
+		
+	}
 
 }
